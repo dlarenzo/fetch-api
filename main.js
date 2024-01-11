@@ -28,9 +28,15 @@ fetch(URL)
 
   // Creates card and places business name in h2 element
   let card = document.createElement("section");
+  let infoContainer = document.createElement("div")
+  let imgContainer = document.createElement("div");
+  let info = document.createElement("div");
 
   // Adds a classname to the section element above
   card.className = "card";
+  infoContainer.className = "info-container";
+  imgContainer.className = "img-container";
+  info.className = "info";
 
   //CREATE BUSINESS  NAME
   let h2 = document.createElement("h2");
@@ -44,15 +50,19 @@ fetch(URL)
   
   let img = document.createElement("img");
   img.src = business[i].imageurl;
-  card.appendChild(img);
-  
+  card.appendChild(infoContainer);
+  infoContainer.appendChild(imgContainer);
+  imgContainer.appendChild(img);
 
   //CREATE BUSINESS LOCATION
   // Include a business location
 
   let address = document.createElement("p");
   address.textContent = business[i].address;
-  card.appendChild(address);
+  card.appendChild(infoContainer);
+  infoContainer.appendChild(info);
+  info.appendChild(address);
+  
   
 
 
@@ -60,7 +70,9 @@ fetch(URL)
   // Include a business Description
   let description = document.createElement("p");
   description.textContent = business[i].description;
-  card.appendChild(description);
+  card.appendChild(infoContainer);
+  infoContainer.appendChild(info);
+  info.appendChild(description);
   
     //NOW IF THE BRANCH IS EVER UPDATED THEY WILL AUTOMATICALLY BE ADDED IN.
   }
