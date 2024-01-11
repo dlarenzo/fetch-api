@@ -62,6 +62,6 @@ fetch(URL)
   description.textContent = business[i].description;
   card.appendChild(description);
   
-
+    //NOW IF THE BRANCH IS EVER UPDATED THEY WILL AUTOMATICALLY BE ADDED IN.
   }
 });
